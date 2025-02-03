@@ -27,7 +27,7 @@ export default async function RootLayout({
       <SessionProvider session={session}>
         <body className={`${karla.variable} antialiased dark`}>
           {children}
-          <Toaster />
+          <Toaster position="top-center" richColors />
         </body>
       </SessionProvider>
     </html>

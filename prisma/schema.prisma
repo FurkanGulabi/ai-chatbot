@@ -69,7 +69,7 @@ model VerificationToken {
 }
 
 model Conversation {
-  id        String    @id @default(cuid())
+  id        String    @id
   title     String    @default("New Conversation")
   userId    String
   user      User      @relation(fields: [userId], references: [id], onDelete: Cascade)

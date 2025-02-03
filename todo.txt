@@ -1,0 +1,56 @@
+Project: AI Chatbot
+
+Overview:
+This is an AI Chatbot project built with Next.js, React (server components), and integrated with Prisma and next-auth for authentication. The project leverages advanced UI components built with shadcn/ui, Tailwind CSS for styling, Sonner for toast notifications, and next-themes for dark mode support. It uses separate layouts for Chat and Authentication, featuring a responsive sidebar with off-canvas behavior for mobile. The overall architecture is designed to provide a modern, interactive chat experience with scalable backend integration.
+
+TODO:
+1. [Prisma Schema]
+   - Configure the Prisma schema with models such as User, Chat, and Message.
+   - Set up model relationships and generate the Prisma client.
+   - Run migrations to update the database.
+
+2. [API Routes & Backend]
+   - Implement API endpoints for sending, retrieving, and managing chat messages.
+   - Integrate these endpoints with the Prisma client and handle error logging.
+   - Consider adding real-time updates (e.g., using WebSockets) for chat interactions.
+
+3. [Authentication]
+   - Configure next-auth integration, connecting it with the Prisma adapter.
+   - Set up session management and secure API routes.
+   - Test user authentication flows and account management.
+
+4. [Chat UI Enhancements]
+   ✓ Added message copy functionality via hover-triggered button
+   - Update ChatBox component to call API routes
+   - Add file attachments/image uploads
+   - Improve error handling
+   - Enhance loading states
+
+5. [Sidebar & Navigation]
+   - Refine the AppSidebar component to include chat history and navigation links.
+   - Improve the responsiveness of the sidebar, ensuring proper behavior on mobile.
+   - Possibly add collapsible sections or accordion-style UI for better organization.
+
+6. [Styling & Theming]
+   - Update global Tailwind CSS settings and design tokens as needed.
+   - Ensure smooth transitions between light and dark modes.
+   - Review UI components for visual consistency and responsiveness.
+
+7. [Testing]
+   - Write unit tests for API endpoints and React components.
+   - Create integration and end-to-end tests for major chat and authentication flows.
+   - Set up continuous integration (CI) pipelines for automated testing.
+
+8. [Documentation]
+   - Update the README with clear setup, development, and deployment instructions.
+   - Document the Prisma schema, API endpoints, and authentication flows.
+   - Consider adding in-line code comments where more context is required.
+
+9. [Deployment]
+   - Configure deployment scripts and environment variables.
+   - Optimize build and runtime performance for production.
+   - Verify deployment settings on platforms like Vercel.
+
+Notes:
+- Consider performance optimizations and refactoring where necessary.
+- Explore additional features such as real-time notifications or advanced analytics. 
