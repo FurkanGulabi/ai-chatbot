@@ -1,8 +1,8 @@
 "use server";
 
 import { auth } from "@/auth";
+import { myProvider } from "@/lib/models";
 import { deleteChatById, getChatById, saveChat } from "@/lib/queries";
-import { google } from "@ai-sdk/google";
 import { convertToCoreMessages, Message, streamText } from "ai";
 import { headers } from "next/headers";
 
@@ -23,7 +23,7 @@ export async function POST(request: Request) {
   );
 
   const result = await streamText({
-    model: google("gemini-2.0-flash-001"),
+    model: myProvider.languageModel("gemini-2.0-flash"),
     messages: coreMessages,
     onFinish: async ({ response }) => {
       if (session.user && session.user.id) {

@@ -21,14 +21,14 @@ import useWindowSize from "./use-window-size";
 
 const suggestedActions = [
   {
-    title: "Help me book a flight",
-    label: "from San Francisco to London",
-    action: "Help me book a flight from San Francisco to London",
+    title: "Generate text",
+    label: "Ask a question",
+    action: "What is the capital of France?",
   },
   {
-    title: "What is the status",
-    label: "of flight BA142 flying tmrw?",
-    action: "What is the status of flight BA142 flying tmrw?",
+    title: "Generate code",
+    label: "Ask for code",
+    action: "Write a function to calculate the Fibonacci sequence.",
   },
 ];
 

@@ -67,6 +67,7 @@ model Verification {
 model Chat {
   id        String   @id @default(uuid())
   createdAt DateTime @default(now())
+  title     String   @default("Untitled")
   messages  Json
   userId    String
   user      User     @relation(fields: [userId], references: [id])

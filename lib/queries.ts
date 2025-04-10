@@ -3,6 +3,7 @@ import "server-only";
 
 import { CoreMessage } from "ai";
 import { prisma } from "./prisma";
+import { generateTitleWithAi } from "./utils";
 
 export async function getUser(email: string): Promise<User | null> {
   try {
@@ -72,16 +73,35 @@ export async function saveChat({
         },
       });
     }
+    const title = await generateTitleWithAi(messages);
     return await prisma.chat.create({
       data: {
         id,
         messages: JSON.stringify(messages),
+        title,
         createdAt: new Date(),
         userId: userId,
       },
     });
   } catch (error) {
     console.error("Failed to save chat to database", error);
+    throw error;
+  }
+}
+export async function getChatsByUserId(userId: string) {
+  try {
+    const chats = await prisma.chat.findMany({
+      where: {
+        userId,
+      },
+      orderBy: {
+        createdAt: "desc",
+      },
+    });
+
+    return chats;
+  } catch (error) {
+    console.error("Failed to get chats by user id from database", error);
     throw error;
   }
 }

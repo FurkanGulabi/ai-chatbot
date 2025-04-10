@@ -1,4 +1,3 @@
-import Navbar from "@/components/custom/navbar";
 import { Toaster } from "@/components/ui/sonner";
 import type { Metadata } from "next";
 import { ThemeProvider } from "next-themes";
@@ -16,7 +15,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className="antialiased">
+      <body className="antialiased ">
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
@@ -24,7 +23,6 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <Toaster position="top-center" />
-          <Navbar />
 
           {children}
         </ThemeProvider>
