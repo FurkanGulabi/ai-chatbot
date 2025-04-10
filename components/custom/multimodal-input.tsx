@@ -222,7 +222,7 @@ export function MultimodalInput({
         placeholder="Send a message..."
         value={input}
         onChange={handleInput}
-        className="min-h-[24px] h-full overflow-hidden resize-none rounded-lg text-base bg-muted border-none"
+        className="resize-none overflow-hidden relative rounded-lg h-full min-h-24"
         rows={3}
         onKeyDown={(event) => {
           if (event.key === "Enter" && !event.shiftKey) {
@@ -261,7 +261,7 @@ export function MultimodalInput({
       )}
 
       <Button
-        className="rounded-full p-1.5 h-fit absolute bottom-2 right-10 m-0.5 dark:border-zinc-700"
+        className="rounded-full p-1.5 h-fit absolute bottom-2 right-[53px] m-0.5 dark:border-zinc-700"
         onClick={(event) => {
           event.preventDefault();
           fileInputRef.current?.click();
